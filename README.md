@@ -1,5 +1,7 @@
 # Zubia's Studio: Interactive 3D Portfolio
 
+**Live site:** https://zubia-junaid-portfolio.vercel.app
+
 A portfolio presented as a miniature 3D game studio. When the site opens, my avatar walks into the lobby and welcomes the visitor. As you scroll, the camera glides from room to room while the avatar guides you through each area:
 
 | # | Studio area | Section |
@@ -221,6 +223,13 @@ The Contact Desk form sends real email through **Resend**. The server code is `a
 - **Keys:** `RESEND_API_KEY` (a sending-only key) and `CONTACT_TO` are in `.env`, which is never committed. See `.env.example`.
 - **Delivery evidence:** every sent email is logged with Resend's message ID, for example `contact: sent id=01a1e855-… subject="Module 5 delivery test"`. The visitor's address and message text are not logged. The rest of the evidence is the email in the inbox plus screenshots of each form state.
 - **Limit:** without a verified domain, Resend's `onboarding@resend.dev` sender can only deliver to the Resend account owner's address. Visitors therefore don't get an automatic reply email; they get the on-site confirmation instead.
+
+## Deployment (Module 6)
+
+The site runs on Vercel: the Vite build is served as static files and the three files in `api/` run as serverless functions (`vercel.json` sets their time limits and bundles `api/_data/` with them). `.vercelignore` keeps source material and secrets out of the upload.
+
+- API keys (`GEMINI_API_KEY`, `RESEND_API_KEY`) are set in the Vercel dashboard under Settings → Environment Variables, never in the repo.
+- Deploy from this folder with the Vercel CLI installed in the project: `npx vercel deploy --prod` (a preview without `--prod`).
 
 ## Tech stack
 
