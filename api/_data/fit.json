@@ -1,0 +1,85 @@
+{
+  "generated": "2026-11-17T06:54:37.844Z",
+  "results": [
+    {
+      "id": "unity",
+      "label": "Unity expertise",
+      "score": 10,
+      "verdict": "Core strength",
+      "evidence": "Zubia has built numerous titles in Unity, including The Abduction, Warp: Fractured Reality, and her internship work at Game Storm Studios.",
+      "gap": "She can expand her expertise by tackling high-performance DOTS and data-oriented design in future Unity projects."
+    },
+    {
+      "id": "vr",
+      "label": "VR / XR development",
+      "score": 9,
+      "verdict": "Strong, repeated evidence",
+      "evidence": "She developed VR-UAVSim and VR Escape Room using Meta Quest, the XR Interaction Toolkit, and custom spatial puzzles.",
+      "gap": "Integrating advanced haptic feedback systems would make her VR projects even more immersive."
+    },
+    {
+      "id": "ai",
+      "label": "Enemy AI & gameplay systems",
+      "score": 8,
+      "verdict": "Clear evidence in projects",
+      "evidence": "She implemented NavMesh guards, pathfinding, and sensory detection in projects like The Abduction and The Unbroken Oath.",
+      "gap": "Implementing more complex behavior trees and machine learning agents would further elevate her AI skillset."
+    },
+    {
+      "id": "unreal",
+      "label": "Unreal Engine",
+      "score": 7,
+      "verdict": "Solid, growing",
+      "evidence": "She holds a CEGA certification in Unreal Engine and built 3D endless runners using Blueprints and the third-person template.",
+      "gap": "Delivering a larger-scale Unreal project with custom C++ integration would strengthen her profile."
+    },
+    {
+      "id": "multiplayer",
+      "label": "Multiplayer & backend",
+      "score": 8,
+      "verdict": "Clear evidence in projects",
+      "evidence": "She built a real-time multiplayer Ludo game in Unity paired with Node.js and Laravel backends during freelance work.",
+      "gap": "Handling ultra-low latency netcode for fast-paced competitive shooters would test her multiplayer scaling skills."
+    },
+    {
+      "id": "art",
+      "label": "3D modelling & animation",
+      "score": 7,
+      "verdict": "Solid, growing",
+      "evidence": "She rigged and animated her own 19-bone Blender avatar for her portfolio website and holds a post-production CEGA certification.",
+      "gap": "Mastering advanced character rigging and high-poly texturing pipelines would push her artistic output further."
+    },
+    {
+      "id": "team",
+      "label": "Teamwork",
+      "score": 8,
+      "verdict": "Demonstrated in team projects",
+      "evidence": "She collaborated with team Dazzling Devs on The Unbroken Oath and is part of the four-person team building the VR-UAVSim final year project.",
+      "gap": "Taking on a formal lead producer role in a multi-disciplinary team would broaden her collaboration experience."
+    },
+    {
+      "id": "consistency",
+      "label": "Consistency",
+      "score": 8,
+      "verdict": "Consistent project delivery",
+      "evidence": "Her portfolio features a continuous output of completed games, game jam entries, and three studio internships.",
+      "gap": "Maintaining an even faster public release cadence for commercial indie projects would demonstrate even greater momentum."
+    },
+    {
+      "id": "learner",
+      "label": "Fast learner",
+      "score": 8,
+      "verdict": "Fast learner",
+      "evidence": "She quickly mastered diverse stacks ranging from Unity C# and Unreal Blueprints to Three.js and full-stack web technologies.",
+      "gap": "Applying her fast learning directly to industry-standard proprietary engines would prove her adaptability further."
+    },
+    {
+      "id": "deadlines",
+      "label": "Ships on deadlines",
+      "score": 8,
+      "verdict": "Shipped under timelines",
+      "evidence": "She successfully delivered a shippable mobile prototype under a fixed internship timeline at Game Storm Studios.",
+      "gap": "Balancing larger multi-platform commercial launch dates will test her deadline management at a bigger scale."
+    }
+  ]
+}
