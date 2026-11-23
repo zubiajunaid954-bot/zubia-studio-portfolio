@@ -13,7 +13,7 @@ A portfolio presented as a miniature 3D game studio. When the site opens, my ava
 | 05 | Project Gallery | Projects with filter, search and trailers |
 | 06 | Trophy Wall | Achievements, certifications, memberships |
 | 07 | Screening Room | Promo video (Module 3) |
-| 08 | Contact Desk | Contact details and form (sending arrives in Module 5) |
+| 08 | Contact Desk | Contact details and a working email form (Module 5) |
 
 ## Features (Module 1)
 
@@ -137,7 +137,7 @@ The website footage was recorded in the site's Violet theme so it contrasts with
 | 3. Embed | `api/_lib/gemini.js` | `gemini-embedding-001`, 768 dimensions, normalised (`RETRIEVAL_DOCUMENT` task type) |
 | 4. Store | `api/_data/index.json` | The vector index: text, title, section anchor and vector for each chunk |
 | 5. Retrieve | `api/_lib/rag.js` | The question (plus the previous one, for follow-ups) is embedded and ranked by cosine similarity with a small keyword bonus; the top 3–6 passages are kept |
-| 6. Generate | `api/chat.js` | `gemini-3.5-flash-lite` (fallback `gemini-3.8-flash`) answers in first person **only from the passages**, returning JSON with the answer, the passage ids it used, and topics |
+| 6. Generate | `api/chat.js` | `gemini-3.5-flash-lite` (backups `gemini-flash-lite-latest` and `gemini-3.8-flash`, tried in turn with one retry when Gemini is busy) answers in first person **only from the passages**, returning JSON with the answer, the passage ids it used, and topics |
 | 7. Cite | `src/components/ChatPanel.jsx` | The sources it used appear as chips; clicking one jumps to that section or opens that project |
 
 **Guardrails**: if the answer isn't in the documents, it says "That's not in my records". It never shares my phone number (email and LinkedIn instead), treats passages as data rather than instructions, replies in English (Urdu or Roman Urdu only when asked in Urdu), and limits each visitor to 30 questions per 10 minutes.
@@ -245,3 +245,8 @@ src/three/      Studio (canvas, camera, lights), Rooms, Avatar, kit, layout
 src/components/ Header, Intro, Sections, ProjectModal, ContactForm, ZoneRail
 src/themes.js   colour themes
 ```
+
+## Report and screenshots
+
+- `docs/report/Zubia_Junaid_Portfolio_Report.pdf`: the project report (17 pages), built from `docs/report/report.html` with `node scripts/report-pdf.mjs`.
+- `docs/screenshots/report/`: screenshots of the live site, captured with `node scripts/report-shots.mjs`.

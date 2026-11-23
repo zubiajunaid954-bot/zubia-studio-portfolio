@@ -3,6 +3,7 @@ const BASE = 'https://generativelanguage.googleapis.com/v1beta/models/'
 export const EMBED_MODEL = process.env.GEMINI_EMBED_MODEL || 'gemini-embedding-001'
 export const CHAT_MODEL = process.env.GEMINI_CHAT_MODEL || 'gemini-3.5-flash-lite'
 export const FALLBACK_MODEL = process.env.GEMINI_FALLBACK_MODEL || 'gemini-3.8-flash'
+export const BACKUP_MODEL = process.env.GEMINI_BACKUP_MODEL || 'gemini-flash-lite-latest'
 export const DIMS = 768
 
 function key() {
@@ -61,11 +62,15 @@ export async function embedDocuments(texts) {
 
 /** Embed one search query. */
 export async function embedQuery(text) {
-  const data = await call(EMBED_MODEL, 'embedContent', {
-    content: { parts: [{ text }] },
-    taskType: 'RETRIEVAL_QUERY',
-    outputDimensionality: DIMS,
-  })
+  const req = { content: { parts: [{ text }] }, taskType: 'RETRIEVAL_QUERY', outputDimensionality: DIMS }
+  let data
+  try {
+    data = await call(EMBED_MODEL, 'embedContent', req, 8000)
+  } catch (err) {
+    if (err.code === 'NO_KEY' || ![429, 500, 502, 503, 504].includes(err.status)) throw err
+    await new Promise((r) => setTimeout(r, 800)) // busy: one quick retry
+    data = await call(EMBED_MODEL, 'embedContent', req, 8000)
+  }
   return normalise(data.embedding.values)
 }
 
@@ -82,13 +87,32 @@ export async function generateJSON({ system, contents, schema, temperature = 0.4
       thinkingConfig: { thinkingLevel: thinking },
     },
   })
+  // Gemini models are sometimes "experiencing high demand" (503) or rate-limited (429).
+  // Try the main model, then the backups, then one short pause and a last round, all within the time budget.
+  const tries = [
+    [CHAT_MODEL, 'minimal', timeouts[0]],
+    [BACKUP_MODEL, 'minimal', timeouts[0]],
+    [FALLBACK_MODEL, 'low', timeouts[1]],
+  ]
+  const budget = Date.now() + timeouts[0] + timeouts[1]
   let data
-  try {
-    data = await call(CHAT_MODEL, 'generateContent', body('minimal'), timeouts[0])
-  } catch (err) {
-    if (err.code === 'NO_KEY') throw err
-    data = await call(FALLBACK_MODEL, 'generateContent', body('low'), timeouts[1]) // backup model
+  let lastErr
+  for (let round = 0; round < 2 && !data; round++) {
+    if (round) await new Promise((r) => setTimeout(r, 1200))
+    for (const [model, thinking, ms] of tries) {
+      const left = budget - Date.now()
+      if (left < 2500) break
+      try {
+        data = await call(model, 'generateContent', body(thinking), Math.min(ms, left))
+        break
+      } catch (err) {
+        if (err.code === 'NO_KEY') throw err
+        lastErr = err
+        if (err.status && ![429, 500, 502, 503, 504].includes(err.status)) break // a real error: don't retry
+      }
+    }
   }
+  if (!data) throw lastErr || Object.assign(new Error('Gemini unavailable'), { status: 503 })
   const text = data?.candidates?.[0]?.content?.parts?.map((p) => p.text || '').join('') || '{}'
   return JSON.parse(text)
 }

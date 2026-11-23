@@ -4,7 +4,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "functions": {
-    "api/chat.js": { "maxDuration": 30, "includeFiles": "api/_data/**" },
+    "api/chat.js": { "maxDuration": 60, "includeFiles": "api/_data/**" },
     "api/fit.js": { "maxDuration": 60, "includeFiles": "api/_data/**" },
     "api/contact.js": { "maxDuration": 15 }
   },
