@@ -1,6 +1,6 @@
 # Zubia's Studio: Interactive 3D Portfolio
 
-**Live site:** https://zubia-junaid-portfolio.vercel.app
+**Live site:** https://zubia-junaid-portfolio.vercel.app · **Source code:** https://github.com/zubiajunaid954-bot/zubia-studio-portfolio
 
 A portfolio presented as a miniature 3D game studio. When the site opens, my avatar walks into the lobby and welcomes the visitor. As you scroll, the camera glides from room to room while the avatar guides you through each area:
 
