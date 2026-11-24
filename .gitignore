@@ -12,6 +12,3 @@ media-src/recordings
 
 .scratch
 
-# local tool settings
-.claude
-.npmrc
