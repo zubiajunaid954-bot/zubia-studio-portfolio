@@ -15,7 +15,8 @@
  * Written in ES3 (semicolons, var, no trailing commas) because that is what ExtendScript accepts.
  */
 (function () {
-  var ROOT = 'D:/My_Website_v2/';
+  // the project folder is the parent of this script's folder
+  var ROOT = new File($.fileName).parent.parent.fsName.replace(/\\/g, '/') + '/';
   var LOG = new File(ROOT + 'after-effects/build_log.txt');
   LOG.open('w');
   function log(s) { LOG.writeln(s); }

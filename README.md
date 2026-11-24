@@ -120,10 +120,10 @@ The website footage was recorded in the site's Violet theme so it contrasts with
 
 **Music**: "Trailer" by PaulYudin, from Pixabay, used under the Pixabay Content License (free to use, no attribution required).
 
-**Rebuild**: open `behind_the_doors.jsx` with File > Scripts > Run Script File in After Effects. It saves the `.aep` with a render-queue item. Then render without the AE window, so Windows can't close it as "not responding":
+**Rebuild**: open `behind_the_doors.jsx` with File > Scripts > Run Script File in After Effects. It saves the `.aep` with a render-queue item. Then, from the project folder, render without the AE window, so Windows can't close it as "not responding":
 
 ```bash
-"C:\Program Files\Adobe\Adobe After Effects 2026\Support Files\aerender.exe" -project "D:\My_Website_v2\after-effects\Zubia_Junaid_Promo.aep" -rqindex 1
+"C:\Program Files\Adobe\Adobe After Effects 2026\Support Files\aerender.exe" -project "after-effects\Zubia_Junaid_Promo.aep" -rqindex 1
 ```
 
 ## RAG chatbot (Module 4)
