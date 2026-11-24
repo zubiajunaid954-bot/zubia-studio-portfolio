@@ -2,57 +2,50 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Zubia's Studio - Interactive 3D Portfolio - Project Report</title>
+<title>Zubia's Studio - Interactive 3D Web Portfolio - Project Report</title>
 <style>
-  @page { size: A4; margin: 25mm 24mm 22mm 24mm; }
+  @page { size: A4; margin: 24mm 22mm 22mm 22mm; }
+  @page :first { margin: 0; }
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  body { margin: 0; font: 12pt/1.45 "Times New Roman", Times, serif; color: #000; text-align: justify; }
-  h1, h2, h3, h6 { font-family: Calibri, "Segoe UI", sans-serif; text-align: left; }
-  h2 { font-size: 15pt; color: #1f3864; margin: 16pt 0 7pt; break-after: avoid; }
-  h3 { font-size: 12.5pt; color: #2f5496; margin: 12pt 0 5pt; break-after: avoid; }
-  h4 { font: bold 12pt "Times New Roman", serif; margin: 9pt 0 3pt; break-after: avoid; }
+  body { margin: 0; font: 11.5pt/1.5 "Times New Roman", Times, serif; color: #000; text-align: justify; }
+  h1, h2, h3, h4 { color: #000; text-align: left; break-after: avoid; }
+  h2 { font: bold 16pt "Times New Roman", serif; margin: 18pt 0 8pt; padding-bottom: 3pt; border-bottom: 1pt solid #000; }
+  h3 { font: bold 13pt "Times New Roman", serif; margin: 13pt 0 5pt; }
+  h4 { font: bold italic 11.5pt "Times New Roman", serif; margin: 9pt 0 3pt; }
   p { margin: 0 0 8pt; }
   ul, ol { margin: 0 0 8pt; padding-left: 22pt; }
   li { margin-bottom: 3pt; }
-  code, .mono { font: 10pt Consolas, monospace; }
-  pre { font: 9.5pt/1.35 Consolas, monospace; background: #f2f2f2; padding: 6pt 8pt; margin: 0 0 9pt; white-space: pre-wrap; text-align: left; break-inside: avoid; }
+  code { font: 9.5pt Consolas, monospace; }
+  pre { font: 9.5pt/1.4 Consolas, monospace; border: 0.5pt solid #000; padding: 6pt 8pt; margin: 0 0 9pt; white-space: pre-wrap; text-align: left; break-inside: avoid; }
   .newpage { break-before: page; }
-  .center { text-align: center; }
 
-  /* captions */
-  h6 { font: bold 10.5pt "Times New Roman", serif; color: #000; text-align: center; margin: 4pt 0 10pt; }
+  h6 { font: italic 10.5pt "Times New Roman", serif; color: #000; text-align: center; margin: 4pt 0 11pt; }
   h6.tab { margin: 10pt 0 4pt; break-after: avoid; }
   figure { margin: 8pt 0 0; text-align: center; break-inside: avoid; }
-  figure img { max-width: 100%; border: 0.5pt solid #999; }
-  figure.w80 img { width: 80%; }
-  figure.w70 img { width: 70%; }
-  figure.w60 img { width: 60%; }
-  .row { display: flex; gap: 8pt; justify-content: center; }
-  .row img { width: 49%; }
-  .row3 img { width: 26%; }
+  figure img { border: 0.5pt solid #000; }
+  .w80 img { width: 80%; } .w70 img { width: 70%; } .w60 img { width: 60%; }
+  .row { display: flex; gap: 8pt; justify-content: center; break-inside: avoid; margin-top: 8pt; }
+  .row img { width: 49%; border: 0.5pt solid #000; }
+  .row3 img { width: 16%; }
 
-  /* tables */
   table { width: 100%; border-collapse: collapse; margin: 0 0 12pt; font-size: 10.5pt; line-height: 1.3; text-align: left; break-inside: avoid; }
-  th { background: #1f3864; color: #fff; font-weight: bold; padding: 4pt 5pt; border: 0.5pt solid #1f3864; text-align: center; }
-  td { padding: 3pt 5pt; border: 0.5pt solid #7f7f7f; vertical-align: top; }
+  th { font-weight: bold; padding: 4pt 5pt; border: 0.75pt solid #000; border-bottom-width: 1.5pt; text-align: left; }
+  td { padding: 3pt 5pt; border: 0.5pt solid #000; vertical-align: top; }
 
   /* cover */
-  .cover { text-align: center; height: 245mm; }
-  .cover img { width: 34mm; margin-top: 6mm; }
-  .cover .uni { font: bold 17pt "Times New Roman", serif; color: #1f3864; margin: 12pt 0 0; }
-  .cover .city { font-size: 11pt; margin: 2pt 0 22pt; }
-  .cover .course { font: bold 13pt "Times New Roman", serif; margin: 0; }
-  .cover .title { font: bold 19pt "Times New Roman", serif; color: #1f3864; margin: 28pt 0 10pt; line-height: 1.3; }
-  .cover .sub { font-style: italic; font-size: 12pt; margin: 0 0 4pt; }
-  .cover .rep { font: bold 13pt "Times New Roman", serif; margin: 0 0 30pt; }
-  .cover .lbl { font: bold 12pt "Times New Roman", serif; color: #1f3864; margin: 0 0 5pt; }
-  .cover table { width: 62%; margin: 0 auto 26pt; font-size: 11pt; }
-  .cover td { text-align: center; }
+  .cover { height: 296mm; box-sizing: border-box; padding: 26mm 22mm 22mm; display: flex; flex-direction: column; justify-content: space-between; text-align: left; }
+  .cover .tag { font: 10pt "Times New Roman", serif; letter-spacing: 2.5pt; text-transform: uppercase; }
+  .cover h1 { font: bold 32pt "Times New Roman", serif; margin: 8mm 0 3mm; }
+  .cover .sub { font-size: 13pt; max-width: 150mm; margin: 0; text-align: left; }
+  .cover img { width: 100%; border: 0.75pt solid #000; margin: 9mm 0 0; }
+  .cover dl { display: grid; grid-template-columns: 40mm 1fr; gap: 2pt 4mm; margin: 0; font-size: 11.5pt; border-top: 1pt solid #000; padding-top: 5mm; }
+  .cover dt { font-weight: bold; }
+  .cover dd { margin: 0; }
 
-  /* contents, figures, tables lists */
-  .front h2 { text-align: center; font-size: 16pt; margin-top: 0; }
-  .toc { font-size: 11.5pt; line-height: 1.55; text-align: left; }
+  .front h2 { border: 0; text-align: center; margin-top: 0; }
+  .toc { font-size: 11.5pt; line-height: 1.6; text-align: left; }
   .toc div { display: flex; align-items: baseline; }
+  .toc .l2 { font-weight: bold; margin-top: 3pt; }
   .toc .l3 { padding-left: 16pt; }
   .toc .t { flex: none; max-width: 88%; }
   .toc .dots { flex: 1; border-bottom: 1pt dotted #000; margin: 0 3pt; transform: translateY(-3pt); }
@@ -63,424 +56,391 @@
 
 <!-- ========== COVER ========== -->
 <section class="cover">
-  <img src="img/ned_logo.png" alt="NED University logo">
-  <p class="uni">NED UNIVERSITY OF ENGINEERING AND<br>TECHNOLOGY</p>
-  <p class="city">Karachi, Pakistan</p>
-  <p class="course">Course: Web Programming (WP)</p>
-  <p class="course">Course Code: CT-409</p>
-  <p class="title">INTERACTIVE 3D WEB PORTFOLIO</p>
-  <p class="sub">Zubia’s Studio – a portfolio presented as a miniature game studio</p>
-  <p class="rep">Project Report</p>
-  <p class="lbl">Submitted by</p>
-  <table>
-    <tr><th style="width:12%">S. No.</th><th>Name</th><th style="width:30%">Roll No.</th></tr>
-    <tr><td>1</td><td>Zubia Junaid</td><td>GA-23307</td></tr>
-  </table>
-  <p class="lbl">Course Advisor</p>
-  <p>Ms. Saadia Arshad</p>
+  <div>
+    <div class="tag">Semester Project · Web 3D Programming</div>
+    <h1>Zubia’s Studio</h1>
+    <p class="sub">Design and Development of an Interactive 3D Web Portfolio, presented as a miniature game studio with a Blender avatar guide, an After Effects promo video, a RAG chatbot and an email contact system.</p>
+    <img src="img/02-lobby.jpg" alt="">
+  </div>
+  <dl>
+    <dt>Student</dt><dd>Zubia Junaid</dd>
+    <dt>Roll No.</dt><dd>GA-23307</dd>
+    <dt>Programme</dt><dd>BS Computer Science &amp; IT (Gaming &amp; Animation)</dd>
+    <dt>Course</dt><dd>Web 3D Programming (CT-409)</dd>
+    <dt>Course Advisor</dt><dd>Ms. Saadia Arshad</dd>
+    <dt>University</dt><dd>NED University of Engineering &amp; Technology, Karachi</dd>
+    <dt>Live website</dt><dd>https://zubia-junaid-portfolio.vercel.app</dd>
+    <dt>GitHub</dt><dd>https://github.com/zubiajunaid954-bot/zubia-studio-portfolio</dd>
+    <dt>Date</dt><dd>November 2026</dd>
+  </dl>
 </section>
 
-<!-- ========== FRONT MATTER ========== -->
+<!-- ========== CONTENTS ========== -->
 <section class="front newpage">
-  <h2>Table of Contents</h2>
+  <h2>Contents</h2>
   <div class="toc"><!--TOC--></div>
 </section>
-<section class="front newpage">
-  <h2>List of Figures</h2>
-  <div class="toc"><!--LOF--></div>
-</section>
-<section class="front newpage">
-  <h2>List of Tables</h2>
-  <div class="toc"><!--LOT--></div>
-</section>
-
-<!-- ========== ABSTRACT ========== -->
-<section class="newpage">
-<h2 id="abstract">Abstract</h2>
-<p>This report describes the design and development of an interactive 3D web portfolio for a game developer. Instead of a conventional page of text, the portfolio is presented as a small isometric game studio rendered in the browser with Three.js. The visitor scrolls through eight rooms (lobby, about, skills, career, projects, achievements, showreel and contact), and a rigged 3D avatar of the author walks from room to room and introduces each section.</p>
-<p>The project was completed in six modules. Module 1 builds the 3D website with React and React Three Fiber. Module 2 prepares, rigs and animates the avatar in Blender using Python scripts. Module 3 produces a 48-second promotional video in Adobe After Effects. Module 4 adds a chatbot that answers questions about the author using retrieval-augmented generation (RAG) with the Google Gemini API. Module 5 adds a contact form that sends real email through the Resend API with server-side validation and spam protection. Module 6 deploys the site on Vercel, with the API keys stored as environment variables, and publishes the source code on GitHub. As an additional feature, a set of browser mini-games (the “ZJ Arcade”) was built inside the studio.</p>
-<p>The site was tested with automated browser scripts in Microsoft Edge on desktop and phone screen sizes, and on the deployed version. The report also discusses the problems met during development, such as automatic rigging failing on an AI-generated mesh and the language model service being temporarily overloaded, and how each one was solved.</p>
-<p><b>Live website:</b> https://zubia-junaid-portfolio.vercel.app<br>
-<b>Source code:</b> https://github.com/zubiajunaid954-bot/zubia-studio-portfolio</p>
 
 <!-- ========== 1 ========== -->
+<section class="newpage">
 <h2 id="s1">1. Introduction</h2>
-<p>A portfolio is usually the first thing a studio looks at when hiring a game developer. Most portfolios are static pages that list skills and projects. For a game developer, the portfolio itself can show the skills being claimed: real-time 3D, character animation, interaction design and working back-end features. This project builds such a portfolio and uses it to present the author’s education, three internships, sixteen projects and achievements.</p>
+<p>The semester project asks for a modern, interactive 3D web portfolio that brings together web development, 3D modelling, animation, artificial intelligence and back-end integration. I am a game developer, so I wanted the portfolio itself to feel like a small game rather than a page of text. The result is <b>Zubia’s Studio</b>: a miniature isometric game studio rendered in the browser. My own 3D avatar walks into the lobby, welcomes the visitor and guides them from room to room, and each room holds one section of the portfolio.</p>
 
-<h3 id="s1-1">1.1 Problem Statement</h3>
-<p>Design and develop an interactive 3D web portfolio that includes a custom 3D avatar made in Blender, a promotional video made in After Effects, an AI chatbot that answers questions about the owner, and a working contact form. The site must be deployed publicly, and the complete source code, avatar model, video and assets must be submitted in a public GitHub repository together with a report.</p>
+<h3 id="s1-1">1.1 Project Overview</h3>
+<p>As the visitor scrolls, the camera glides between eight rooms connected by a lit path: the Lobby, About Room, Skills Station, Career Path, Project Gallery, Trophy Wall, Screening Room and Contact Desk. The avatar was prepared, rigged and animated in Blender, the promotional video was made in After Effects and plays in the Screening Room, the chatbot answers questions about me from my own documents, and the contact form sends real email. The site is deployed on Vercel and the full project is on GitHub.</p>
 
 <h3 id="s1-2">1.2 Objectives</h3>
 <ul>
-  <li>Build a 3D studio scene in the browser that works as the navigation of the portfolio.</li>
-  <li>Create, rig and animate a 3D avatar of the author and use it as a guide on the site.</li>
-  <li>Produce a promotional video in After Effects and show it on the site.</li>
-  <li>Add a chatbot that answers only from the author’s own CV and project information.</li>
-  <li>Add a contact form that delivers email and resists spam.</li>
-  <li>Keep the content readable on phones, on slow devices and for keyboard and screen-reader users.</li>
-  <li>Deploy the site with all secret keys kept out of the source code.</li>
+  <li>Present my profile, skills, projects, education, experience and achievements in an interactive 3D environment.</li>
+  <li>Create an original 3D avatar in Blender and use it as an animated guide on the website.</li>
+  <li>Produce a short promotional video in After Effects and embed it in the portfolio.</li>
+  <li>Build a RAG chatbot that answers only from my own information and does not invent facts.</li>
+  <li>Add a secure contact form with validation, spam protection and email delivery.</li>
+  <li>Deploy the site online, keep it usable on desktop, tablet and mobile, and document the work.</li>
 </ul>
 
-<h3 id="s1-3">1.3 Organisation of the Report</h3>
-<p>Section 2 explains the concept and the tools used, and Section 3 the overall design of the system. Sections 4 to 7 describe Modules 1 to 4. Section 8 describes the additional arcade games. Sections 9 and 10 cover the contact form and the deployment. Section 11 presents the testing, Section 12 the main problems and their solutions, and Sections 13 and 14 the limitations and conclusion. Appendix A maps each requirement to the place where it is addressed.</p>
-
-<!-- ========== 2 ========== -->
-<h2 id="s2">2. Concept and Technologies</h2>
-<h3 id="s2-1">2.1 Concept</h3>
-<p>The idea came from websites that show a company as a miniature 3D model, where the camera moves over the model as the user scrolls. Here the model is a game studio at night. Each section of the portfolio has its own room, connected by a lit path. When a section scrolls into view, the camera moves to its room and the avatar walks there and says a short line. All text is also kept as normal HTML on top of the scene, so the portfolio still works as a quick CV for someone who only wants to read it.</p>
-
-<h3 id="s2-2">2.2 Tools and Technologies</h3>
-<h6 class="tab" id="t1">Table 1: Tools and technologies used</h6>
+<h3 id="s1-3">1.3 Tools and Technologies</h3>
+<h6 class="tab">Table 1: Tools used in the project</h6>
 <table>
-  <tr><th style="width:26%">Area</th><th>Tools</th></tr>
-  <tr><td>Front end</td><td>React 19, Vite 8, Three.js 0.187, React Three Fiber 9, drei 10, Zustand (state)</td></tr>
-  <tr><td>3D character</td><td>Meshy AI (base mesh from a reference image), Blender 5.0 with Python scripts</td></tr>
-  <tr><td>Video</td><td>Adobe After Effects 2026 (project built by ExtendScript), ffmpeg</td></tr>
-  <tr><td>Chatbot</td><td>Google Gemini API: gemini-embedding-001 for embeddings, Gemini Flash-Lite and Flash models for answers</td></tr>
+  <tr><th style="width:24%">Area</th><th>Tools</th></tr>
+  <tr><td>Website</td><td>React 19, Vite 8, Three.js 0.187, React Three Fiber 9, drei 10, Zustand</td></tr>
+  <tr><td>Avatar</td><td>Meshy AI (base mesh from a reference image), Blender 5.0 with Python scripts</td></tr>
+  <tr><td>Video</td><td>Adobe After Effects 2026, ffmpeg</td></tr>
+  <tr><td>Chatbot</td><td>Google Gemini API (gemini-embedding-001 and Gemini Flash models)</td></tr>
   <tr><td>Email</td><td>Resend email API</td></tr>
-  <tr><td>Server</td><td>Node.js serverless functions on Vercel</td></tr>
-  <tr><td>Testing</td><td>Playwright with Microsoft Edge, Node.js simulation scripts</td></tr>
-  <tr><td>Version control</td><td>Git and GitHub</td></tr>
+  <tr><td>Deployment</td><td>Vercel (static hosting and Node.js serverless functions), Git, GitHub</td></tr>
+  <tr><td>Testing</td><td>Playwright with Microsoft Edge</td></tr>
 </table>
 
-<!-- ========== 3 ========== -->
-<h2 id="s3">3. System Design</h2>
-<h3 id="s3-1">3.1 Architecture</h3>
-<p>The website is a single-page React application. It has two layers drawn on top of each other: a Three.js canvas that renders the studio and the avatar, and an HTML layer with the actual content. Both layers read the same Zustand store, so the current room, the active theme and the state of the chat and the games are always shared. For example, when the visitor scrolls to the Projects section, the store records the new zone, the camera moves to the Project Gallery and the avatar starts walking there.</p>
-<p>Anything that needs a secret key runs on the server as a serverless function. There are three: <code>/api/chat</code> for the chatbot, <code>/api/fit</code> for the Fit Check game and <code>/api/contact</code> for the contact form. The browser never sees the Gemini or Resend keys. During development, a small Vite plugin runs the same functions locally, so the code is identical in development and in production.</p>
+<h3 id="s1-4">1.4 System Architecture</h3>
+<p>The website is a single-page React application with two layers: a Three.js canvas that draws the studio and the avatar, and an HTML layer with the actual content on top. Both read the same state store, so the current room, the theme, the chat and the games always stay in sync. Anything that needs a secret key runs on the server as a serverless function: <code>/api/chat</code> (chatbot), <code>/api/contact</code> (email) and <code>/api/fit</code> (one of the extra games). The API keys therefore never reach the browser.</p>
+</section>
 
-<h3 id="s3-2">3.2 Content and Navigation</h3>
-<h6 class="tab" id="t2">Table 2: Studio areas and the portfolio sections they hold</h6>
-<table>
-  <tr><th style="width:8%">No.</th><th style="width:26%">Studio area</th><th>Section content</th></tr>
-  <tr><td>01</td><td>Lobby</td><td>Name, short introduction, availability, CV download</td></tr>
-  <tr><td>02</td><td>About Room</td><td>About me, location, degree, focus areas</td></tr>
-  <tr><td>03</td><td>Skills Station</td><td>Engines, gameplay and AI, VR/XR, languages</td></tr>
-  <tr><td>04</td><td>Career Path</td><td>Education and three internships</td></tr>
-  <tr><td>05</td><td>Project Gallery</td><td>16 projects with filter, search and trailers</td></tr>
-  <tr><td>06</td><td>Trophy Wall</td><td>Achievements and certifications</td></tr>
-  <tr><td>07</td><td>Screening Room</td><td>Promotional video (Module 3)</td></tr>
-  <tr><td>08</td><td>Contact Desk</td><td>Contact links and the contact form (Module 5)</td></tr>
-</table>
-<p>All text and project data are kept in one file, <code>src/data/content.js</code>, so the content can be updated without touching the 3D code.</p>
+<!-- ========== MODULE 1 ========== -->
+<section class="newpage">
+<h2 id="m1">2. Module 1: 3D Web-Based Portfolio</h2>
 
-<h3 id="s3-3">3.3 Project Structure</h3>
-<h6 class="tab" id="t3">Table 3: Main folders of the project</h6>
-<table>
-  <tr><th style="width:28%">Folder</th><th>Contents</th></tr>
-  <tr><td><code>src/three/</code></td><td>Studio canvas and camera, rooms, avatar, coin, kit of 3D shapes</td></tr>
-  <tr><td><code>src/components/</code></td><td>Header, intro, sections, project dialog, chat panel, contact form, arcade screens</td></tr>
-  <tr><td><code>src/game/</code></td><td>Game logic for Free Roam, the quiz, Fit Check, Crunch Time and the sound effects</td></tr>
-  <tr><td><code>src/data/</code></td><td>Portfolio content and studio areas</td></tr>
-  <tr><td><code>api/</code></td><td>Serverless functions and the chatbot’s vector index</td></tr>
-  <tr><td><code>knowledge/</code></td><td>CV notes used as the chatbot’s documents</td></tr>
-  <tr><td><code>blender/</code></td><td>Avatar source model, .blend files and Python scripts</td></tr>
-  <tr><td><code>after-effects/</code></td><td>After Effects project and the script that builds it</td></tr>
-  <tr><td><code>media-src/</code></td><td>Video renders, recorded footage and music</td></tr>
-  <tr><td><code>public/</code></td><td>Files served as they are: avatar model, posters, trailers, promo video, CV</td></tr>
-  <tr><td><code>scripts/</code></td><td>Build scripts for the index, Fit Check data, screenshots, report and music</td></tr>
-  <tr><td><code>docs/</code></td><td>This report and the screenshots</td></tr>
-</table>
-
-<!-- ========== 4 ========== -->
-<h2 id="s4">4. Module 1: Interactive 3D Website</h2>
-<h3 id="s4-1">4.1 Building the Studio</h3>
-<p>The studio is not a downloaded model. Floors, walls, desks, shelves, plants, signs and lights are built in code from a small set of components (<code>Box</code>, <code>Cyl</code>, <code>Ball</code>, <code>Plant</code> and <code>Sign</code>). Each component takes a colour name such as “wood” or “accent” rather than a fixed colour, so the whole studio changes when the theme changes. Building the rooms this way kept the download small (only the avatar is a model file) and made it easy to adjust the layout. Small animations make the rooms feel alive: blinking server lights, floating signs, paper planes, spinning trophies and a spotlight that follows the tour.</p>
-<p>The camera is orthographic, which gives the isometric “miniature” look. A short intro plays on the first visit: black bars slide in, the title appears and the camera swoops down while the avatar walks in. It lasts about five seconds and can be skipped with a button, Esc, Enter or by scrolling.</p>
+<h3 id="m1-1">2.1 Interactive 3D Environment</h3>
+<p>The studio is built in code rather than loaded as one large model. Floors, walls, desks, shelves, plants, signs and lights are made from a small set of reusable components (<code>Box</code>, <code>Cyl</code>, <code>Ball</code>, <code>Plant</code> and <code>Sign</code>) in <code>src/three/</code>. Each component takes a colour name such as “wood” or “accent”, so the whole studio changes colour with the theme. An orthographic camera gives the isometric miniature look. Small animations make the rooms feel alive: blinking server lights, floating signs, paper planes, spinning trophies and a spotlight that follows the tour.</p>
 <figure class="w80"><img src="img/01-intro.jpg" alt=""></figure>
-<h6 id="f1">Figure 1: The intro, with the title card and the avatar walking into the lobby</h6>
+<h6>Figure 1: The opening scene, with the title card and the avatar walking into the lobby</h6>
 
-<h3 id="s4-2">4.2 Camera and Navigation</h3>
-<p>An IntersectionObserver watches which section is on screen. When it changes, the camera glides to that room, the room is raised slightly and lit, and the avatar walks along the path to it. The numbered navigation bar at the top and the small map on the right edge can be used to jump directly to any room. In the Project Gallery, each project opens in a dialog with its trailer, a description, highlights, tools and links.</p>
+<h3 id="m1-2">2.2 Home Page</h3>
+<p>The Lobby is the home page. It shows my name, my role (Game Developer – Unity, Unreal Engine, VR/XR), a short introduction, an “open to roles and internships” badge, three quick facts (3 game-studio internships, 16 projects, 2nd place at GameCon) and buttons for my projects, my CV and the contact form. On the first visit a short intro plays: black bars slide in, the title appears and the camera swoops down while the avatar walks in and waves. It lasts about five seconds and can be skipped.</p>
 <figure class="w80"><img src="img/02-lobby.jpg" alt=""></figure>
-<h6 id="f2">Figure 2: The lobby, with the content card on the left and the room on the right</h6>
-<div class="row"><img src="img/05-career.jpg" alt=""><img src="img/06-projects.jpg" alt=""></div>
-<h6 id="f3">Figure 3: The Career Path (left) and the Project Gallery with filters (right)</h6>
+<h6>Figure 2: The home page in the Lobby</h6>
+
+<h3 id="m1-3">2.3 About Me, Skills and Education &amp; Experience</h3>
+<p>The <b>About Room</b> has my photo, a short story, my location, degree, expected graduation and the two areas I focus on (Unity gameplay and VR for Meta Quest). The <b>Skills Station</b> groups my skills into game engines, gameplay and AI, VR/XR, and languages. The <b>Career Path</b> shows my education at NED University and my three internships (Game Storm Studios, Treeobit and TechCami) as a timeline, with the room showing signposts for each step.</p>
+<div class="row"><img src="img/03-about.jpg" alt=""><img src="img/04-skills.jpg" alt=""></div>
+<h6>Figure 3: The About Room (left) and the Skills Station (right)</h6>
+<figure class="w70"><img src="img/05-career.jpg" alt=""></figure>
+<h6>Figure 4: Education and experience on the Career Path</h6>
+
+<h3 id="m1-4">2.4 Projects and Achievements Gallery</h3>
+<p>The <b>Project Gallery</b> lists 16 projects with poster images. They can be filtered by category (Unity, Unreal, VR/XR, Web and C++) and searched by name or tool. Clicking a project opens a dialog with its trailer, a description, highlights, the tools used and links to GitHub or itch.io. The <b>Trophy Wall</b> shows my achievements (GameCon runner-up, Game Jam 2025, a hackathon) and certifications, with spinning trophies in the room.</p>
+<div class="row"><img src="img/06-projects.jpg" alt=""><img src="img/07-achievements.jpg" alt=""></div>
+<h6>Figure 5: The Project Gallery with filters (left) and the Trophy Wall (right)</h6>
 <figure class="w70"><img src="img/10-project-modal.jpg" alt=""></figure>
-<h6 id="f4">Figure 4: A project dialog with the trailer and project details</h6>
+<h6>Figure 6: A project dialog with its trailer and details</h6>
 
-<h3 id="s4-3">4.3 Themes</h3>
-<p>The site has four colour themes taken from reference palettes: Amber Night (default), Violet, Lime &amp; Forest and Mono Light. Each theme defines both the page colours and the colours and lights of the 3D scene, and the avatar’s hoodie is tinted to match. The chosen theme is saved in the browser.</p>
-<div class="row"><img src="img/12-theme-2.jpg" alt=""><img src="img/12-theme-4.jpg" alt=""></div>
-<h6 id="f5">Figure 5: The Violet theme (left) and the Mono Light theme (right)</h6>
+<h3 id="m1-5">2.5 Contact Section</h3>
+<p>The <b>Contact Desk</b> shows my email, LinkedIn, GitHub and itch.io links and the contact form described in Module 5 (Section 6).</p>
 
-<h3 id="s4-4">4.4 Responsive Design and Accessibility</h3>
-<p>On a phone, the room is shown above the content card and the navigation becomes a horizontal scrolling bar. The layout was tested at a width of 390 pixels and on a real phone. For accessibility, every section is plain HTML with headings and labels, there is a skip link, keyboard focus is always visible, dialogs keep the focus inside them, and all animation is reduced when the system’s “reduce motion” setting is on.</p>
+<h3 id="m1-6">2.6 Animations, Navigation and Transitions</h3>
+<p>An IntersectionObserver detects which section is on screen. When it changes, the camera glides to that room, the room is raised slightly and lit, and the avatar walks along the path and says a line for that room. A numbered navigation bar at the top and a small studio map on the right edge jump directly to any room. Cards fade and slide in, and dialogs open with short transitions. All of this is reduced when the operating system’s “reduce motion” setting is on.</p>
+
+<h3 id="m1-7">2.7 Responsive Design</h3>
+<p>On desktop the content card sits on the left and the room on the right. On tablets and phones the room is shown above the card and the navigation becomes a scrolling bar. The 3D code loads separately, so the text appears first. If the frame rate drops the scene lowers its quality, and devices without WebGL or with very little memory get a simple 2D view, which visitors can also choose with a button.</p>
 <div class="row row3"><img src="img/20-mobile-home.jpg" alt=""><img src="img/21-mobile-projects.jpg" alt=""><img src="img/22-mobile-contact.jpg" alt=""></div>
-<h6 id="f6">Figure 6: The site on a phone screen: lobby, projects and contact</h6>
+<h6>Figure 7: The portfolio on a phone: home, projects and contact</h6>
+</section>
 
-<h3 id="s4-5">4.5 Performance and Fallbacks</h3>
-<p>The 3D code is loaded separately from the page content, so the text appears first and a small progress label is shown while the scene loads. If the frame rate drops, the scene lowers its quality automatically. On devices without WebGL, or with very little memory, the site starts in a simple 2D view, which the visitor can also choose with a button. The production build is about 390 KB of compressed JavaScript, and the avatar model is 1.8 MB.</p>
+<!-- ========== MODULE 2 ========== -->
+<section class="newpage">
+<h2 id="m2">3. Module 2: Custom 3D Avatar Using Blender</h2>
 
-<!-- ========== 5 ========== -->
-<h2 id="s5">5. Module 2: Blender Avatar</h2>
-<h3 id="s5-1">5.1 Source Model</h3>
-<p>The avatar represents the author, wearing a hijab, a hoodie and trainers. A base mesh was generated in Meshy AI from a reference image. The exported model had 134,000 triangles in one piece, no skeleton and no animations, and its materials were marked as fully metallic, which made it look like chrome. Everything after this step was done in Blender 5.0 using Python scripts, so that each step can be repeated if the model changes.</p>
-
-<h3 id="s5-2">5.2 Pipeline</h3>
-<h6 class="tab" id="t4">Table 4: Blender scripts used to prepare the avatar</h6>
+<h3 id="m2-1">3.1 Creating the Character</h3>
+<p>The avatar represents me, wearing a hijab, a hoodie and trainers. I generated a base mesh in Meshy AI from a reference image and then customised and finished it in Blender 5.0. The exported base mesh had 134,000 triangles in one piece, no skeleton and no animation. All later steps were written as Blender Python scripts in the <code>blender/</code> folder, so the whole process can be repeated.</p>
+<h6 class="tab">Table 2: Blender scripts used to prepare the avatar</h6>
 <table>
-  <tr><th style="width:18%">Step</th><th style="width:26%">Script</th><th>Result</th></tr>
-  <tr><td>Optimise</td><td><code>optimize_avatar.py</code></td><td>Reduced from 134k to 32k triangles, fabric materials instead of metal, textures resized to 1024 px, feet placed on the floor</td></tr>
-  <tr><td>Measure</td><td><code>analyze.py</code></td><td>Horizontal slices through the mesh to find the height of the hips, knees, shoulders, elbows and wrists</td></tr>
-  <tr><td>Rig and skin</td><td><code>rig_avatar.py</code></td><td>19-bone skeleton with computed skin weights; separate hoodie material so the website can tint it</td></tr>
-  <tr><td>Animate</td><td><code>animate_avatar.py</code></td><td>Keyframed animation clips, exported as <code>public/models/avatar.glb</code></td></tr>
+  <tr><th style="width:17%">Step</th><th style="width:25%">Script</th><th>Result</th></tr>
+  <tr><td>Optimise</td><td><code>optimize_avatar.py</code></td><td>134k reduced to 32k triangles, materials fixed, textures resized to 1024 px, feet placed on the floor</td></tr>
+  <tr><td>Measure</td><td><code>analyze.py</code></td><td>Slices through the mesh to find the height of hips, knees, shoulders, elbows and wrists</td></tr>
+  <tr><td>Rig and skin</td><td><code>rig_avatar.py</code></td><td>19-bone skeleton and computed skin weights</td></tr>
+  <tr><td>Animate and export</td><td><code>animate_avatar.py</code></td><td>Animation clips, exported as <code>public/models/avatar.glb</code></td></tr>
   <tr><td>Check</td><td><code>preview_poses.py</code></td><td>Renders of key poses to check the deformation</td></tr>
 </table>
 
-<h3 id="s5-3">5.3 Rigging and Skinning</h3>
-<p>Blender’s automatic weights (“heat” weighting) failed on this mesh, because AI-generated meshes are usually not closed and have overlapping parts. Instead, the joint positions were measured from slices of the mesh, a 19-bone skeleton was built from them (spine, neck, head, shoulders, upper and lower arms, hands, legs and feet), and the skin weights were computed by the script: each vertex is assigned to the bones of its body region by distance, then the weights are smoothed and normalised. The poses in Figure 7 were rendered to check that the arms and legs bend without tearing the mesh.</p>
+<h3 id="m2-2">3.2 Materials, Colours and Textures</h3>
+<p>The original export marked every material as fully metallic, which made the clothes look like chrome. The optimisation script replaces them with fabric-like materials (no metalness, higher roughness) and keeps the colour textures at 1024 pixels to reduce the file size. The hoodie was given its own material so the website can tint it to match the active colour theme.</p>
+
+<h3 id="m2-3">3.3 Rigging</h3>
+<p>Blender’s automatic weights failed on this mesh, which is common for AI-generated meshes because they are not closed and have overlapping parts. Instead, I measured the joint positions from slices of the mesh and built a 19-bone skeleton (spine, neck, head, shoulders, arms, hands, legs and feet). The script assigns each vertex to the bones of its body region by distance, then smooths and normalises the weights. Key poses were rendered to check that the arms and legs bend cleanly.</p>
 <figure class="w60"><img src="img/26-avatar-poses.jpg" alt=""></figure>
-<h6 id="f7">Figure 7: Key poses rendered in Blender to check the rig</h6>
+<h6>Figure 8: Key poses rendered in Blender to check the rig</h6>
 
-<h3 id="s5-4">5.4 Animations</h3>
-<h6 class="tab" id="t5">Table 5: Animation clips of the avatar</h6>
+<h3 id="m2-4">3.4 Animations and Export</h3>
+<h6 class="tab">Table 3: Animation clips of the avatar</h6>
 <table>
-  <tr><th style="width:20%">Clip</th><th style="width:14%">Length</th><th>Where it is used</th></tr>
+  <tr><th style="width:18%">Clip</th><th style="width:13%">Length</th><th>Where it is used</th></tr>
   <tr><td>Idle</td><td>4 s loop</td><td>Breathing, weight shift and head turn while standing</td></tr>
-  <tr><td>Walk</td><td>1.1 s loop</td><td>Walking between rooms; plays faster for longer distances</td></tr>
-  <tr><td>Wave</td><td>2.9 s</td><td>Greeting in the lobby and at the contact desk, and when clicked</td></tr>
+  <tr><td>Walk</td><td>1.1 s loop</td><td>Walking between rooms</td></tr>
+  <tr><td>Wave</td><td>2.9 s</td><td>Greeting in the Lobby and Contact Desk, and when clicked</td></tr>
   <tr><td>Point</td><td>2 s</td><td>Pointing at the skills desk and the project wall</td></tr>
-  <tr><td>Guide</td><td>1.9 s</td><td>Arm sweep along the career path</td></tr>
-  <tr><td>Present</td><td>2 s</td><td>Open palm towards the About Room and the cinema</td></tr>
+  <tr><td>Guide</td><td>1.9 s</td><td>Arm sweep along the Career Path</td></tr>
+  <tr><td>Present</td><td>2 s</td><td>Open palm towards the About Room and the cinema screen</td></tr>
   <tr><td>Celebrate</td><td>1.9 s</td><td>At the Trophy Wall and after a message is sent</td></tr>
-  <tr><td>InsertCoin</td><td>One-off</td><td>Takes a coin from her pocket and flicks it into the arcade machine</td></tr>
+  <tr><td>InsertCoin</td><td>One-off</td><td>Puts a coin into the arcade machine (extra feature)</td></tr>
 </table>
+<p>The rigged and animated avatar is exported as a single GLB file of 1.8 MB, which is the web-compatible format required by the brief.</p>
 
-<h3 id="s5-5">5.5 Use on the Website</h3>
-<p>The model is loaded as a GLB file and played with a <code>THREE.AnimationMixer</code>, which blends from one clip to the next. On top of the animation, the head and upper body turn slightly towards the mouse, so the avatar seems to look at the visitor. Clicking the avatar plays the wave with a random line, and each room triggers its own line and gesture.</p>
-<p><b>Files submitted:</b> <code>blender/avatar_animated.blend</code> (rig and animations), <code>blender/avatar_rigged.blend</code>, <code>blender/avatar_static.blend</code>, the source model <code>blender/avatar_meshy_source.glb</code> and the final <code>public/models/avatar.glb</code>.</p>
+<h3 id="m2-5">3.5 Integration into the Website</h3>
+<p>The GLB is loaded in <code>src/three/Avatar.jsx</code> and played with a <code>THREE.AnimationMixer</code>, which blends smoothly between clips. The avatar walks to each room as the visitor scrolls and plays that room’s gesture. On top of the animation her head and upper body turn towards the mouse, and clicking her plays the wave with a random greeting.</p>
+<p><b>Deliverables:</b> <code>blender/avatar_animated.blend</code> (rig and animations), <code>blender/avatar_rigged.blend</code>, <code>blender/avatar_static.blend</code>, the source mesh <code>blender/avatar_meshy_source.glb</code> and the exported model <code>public/models/avatar.glb</code>.</p>
+</section>
 
-<!-- ========== 6 ========== -->
-<h2 id="s6">6. Module 3: After Effects Promotional Video</h2>
-<h3 id="s6-1">6.1 Concept and Storyboard</h3>
-<p>The video, titled “Behind the Doors”, is 48 seconds long at 1920 × 1080 and 30 frames per second. It is set in a dark 3D corridor of glowing arched doors, one for each area of work (Unity, Unreal, VR/XR, and Web and C++). The camera moves to each door, the door swings open on its hinge, light comes through, and the camera passes into the projects behind it.</p>
-<h6 class="tab" id="t6">Table 6: Storyboard of the promotional video</h6>
+<!-- ========== MODULE 3 ========== -->
+<section class="newpage">
+<h2 id="m3">4. Module 3: Short Animated Video Using Adobe After Effects</h2>
+
+<h3 id="m3-1">4.1 Concept and Storyboard</h3>
+<p>The video, “Behind the Doors”, is <b>48 seconds</b> long (1920 × 1080, 30 fps), within the required 30–60 seconds. It takes place in a dark 3D corridor of glowing arched doors, one for each area of my work: Unity, Unreal, VR/XR, and Web and C++. The camera moves to each door, the door swings open, light pours out and the camera flies through into the projects behind it.</p>
+<h6 class="tab">Table 4: Storyboard of the video</h6>
 <table>
-  <tr><th style="width:15%">Time</th><th>Scene</th></tr>
+  <tr><th style="width:14%">Time</th><th>Scene</th></tr>
   <tr><td>0–6 s</td><td>A door frame is drawn in light (“Every game starts behind a door”) and opens</td></tr>
-  <tr><td>6–12 s</td><td>The 3D studio and the avatar, with the name and roles</td></tr>
+  <tr><td>6–12 s</td><td>Name and introduction: “Hi, I’m Zubia Junaid” over the 3D studio and avatar</td></tr>
   <tr><td>12–16 s</td><td>The corridor of four doors (“Magic happens behind the doors”)</td></tr>
-  <tr><td>16–33 s</td><td>Through each door: two project trailers for each area, with titles</td></tr>
-  <tr><td>33–40 s</td><td>Timeline: NED University 2023, TechCami 2025, Treeobit 2026, Game Storm Studios 2026</td></tr>
-  <tr><td>40–44 s</td><td>A trophy door: GameCon runner-up, 3 internships, 16 projects</td></tr>
+  <tr><td>16–33 s</td><td>Skills and projects: two project trailers behind each door, with titles</td></tr>
+  <tr><td>33–40 s</td><td>Timeline: NED University, TechCami, Treeobit, Game Storm Studios</td></tr>
+  <tr><td>40–44 s</td><td>Achievements: GameCon runner-up, 3 internships, 16 projects</td></tr>
   <tr><td>44–48 s</td><td>End card with name, roles and contact links</td></tr>
 </table>
 <figure class="w80"><img src="img/25-promo-frame.jpg" alt=""></figure>
-<h6 id="f8">Figure 8: A frame from the promotional video showing the four doors</h6>
+<h6>Figure 9: A frame from the video showing the four doors</h6>
 
-<h3 id="s6-2">6.2 Techniques</h3>
-<p>The scene uses 3D layers and a two-node camera with eased position and point-of-interest keyframes, plus depth of field. The doors are precompositions rotated around an anchor point on their edge, so they swing like real doors. Other techniques include shape layers drawn on with Trim Paths, the Glow and Fractal Noise effects (for fog), text animators that reveal titles letter by letter with opacity, blur and tracking, a few expressions, and finishing touches such as letterbox bars, vignette, grain and an audio fade.</p>
-<p>The website footage in the video was recorded with a Playwright script (<code>scripts/record-clips.mjs</code>) that opens the site in a special “film mode” and moves through the rooms. The After Effects project itself is created by an ExtendScript file (<code>after-effects/behind_the_doors.jsx</code>), which makes the compositions, camera moves, text and effects, so the project can be rebuilt at any time.</p>
+<h3 id="m3-2">4.2 Typography, Transitions and Effects</h3>
+<p>The scene is built from 3D layers and a two-node camera with eased keyframes and depth of field. Each door is a precomposition rotated around its edge so it swings like a real door. Titles are revealed letter by letter with text animators (opacity, blur and tracking). Other effects include shape layers drawn on with Trim Paths, Glow, Fractal Noise fog, expressions, letterbox bars, a vignette and film grain. The website footage was recorded automatically with a Playwright script, and the After Effects project itself is generated by an ExtendScript file (<code>after-effects/behind_the_doors.jsx</code>) so it can be rebuilt at any time.</p>
 
-<h3 id="s6-3">6.3 Rendering and Output</h3>
-<p>Rendering inside After Effects often made Windows mark the program as “Not Responding”. The final render was therefore made with the command-line renderer <code>aerender.exe</code>. The full-quality master is 95 MB (H.264 with AAC audio), and a compressed 9.4 MB copy is used on the website, where it plays in the Showreel section and on the cinema screen in the 3D Screening Room. The music is “Trailer” by PaulYudin from Pixabay, used under the Pixabay Content License. Several project trailers in the gallery had no sound, so short background tracks were generated for them with a small synthesiser script (<code>scripts/trailer_music.py</code>) to avoid any copyright issue.</p>
+<h3 id="m3-3">4.3 Music and Licensing</h3>
+<p>The background music is “Trailer” by PaulYudin from Pixabay, used under the Pixabay Content License, which allows free use without attribution. The audio fades out at the end.</p>
+
+<h3 id="m3-4">4.4 Export and Embedding</h3>
+<p>The final video was rendered to MP4 (H.264 video, AAC audio) with the command-line renderer <code>aerender</code>, because rendering inside After Effects made Windows mark it as not responding. The full-quality master is 95 MB, and a compressed 9.4 MB copy is embedded on the website. It plays in the Showreel section and on the cinema screen inside the 3D Screening Room.</p>
 <figure class="w70"><img src="img/08-showreel.jpg" alt=""></figure>
-<h6 id="f9">Figure 9: The Screening Room, where the promotional video plays</h6>
-<p><b>Files submitted:</b> <code>after-effects/Zubia_Junaid_Promo.aep</code>, <code>after-effects/behind_the_doors.jsx</code>, <code>media-src/render/Zubia_Junaid_Promo_master.mp4</code> and the web copy <code>public/media/promo.mp4</code>.</p>
+<h6>Figure 10: The video embedded in the Screening Room</h6>
+<p><b>Deliverables:</b> <code>after-effects/Zubia_Junaid_Promo.aep</code> and <code>media-src/render/Zubia_Junaid_Promo_master.mp4</code> (web copy: <code>public/media/promo.mp4</code>).</p>
+</section>
 
-<!-- ========== 7 ========== -->
-<h2 id="s7">7. Module 4: RAG Chatbot</h2>
-<h3 id="s7-1">7.1 Retrieval-Augmented Generation</h3>
-<p>The chatbot, called “Ask Zubia”, answers visitors’ questions about the author. A language model used on its own may invent facts, which is not acceptable in a CV. Retrieval-augmented generation [5] reduces this problem: the system first finds the relevant passages in the author’s own documents and then asks the model to answer only from those passages.</p>
-<h6 class="tab" id="t7">Table 7: Steps of the RAG pipeline</h6>
+<!-- ========== MODULE 4 ========== -->
+<section class="newpage">
+<h2 id="m4">5. Module 4: RAG-Based AI Chatbot</h2>
+<p>The chatbot, “Ask Zubia”, answers visitors’ questions about my background and projects. It uses retrieval-augmented generation (RAG): instead of letting a language model answer from its own memory, the system first finds the relevant passages in my own documents and then asks the model to answer only from them.</p>
+
+<h3 id="m4-1">5.1 Collecting the Information</h3>
+<p>The documents are Markdown notes in <code>knowledge/</code> written from my CV (about me, education, experience, skills, achievements, certifications, contact details and this website) together with the details of every project in <code>src/data/content.js</code>.</p>
+
+<h3 id="m4-2">5.2 Chunking and Embeddings</h3>
+<p>The script <code>scripts/build-index.mjs</code> splits the documents into paragraphs and groups them into chunks of up to 700 characters, each beginning with its document title. This gives 40 chunks. Each chunk is converted into a 768-dimensional vector with Google’s <code>gemini-embedding-001</code> model and normalised.</p>
+
+<h3 id="m4-3">5.3 Vector Index</h3>
+<p>The vectors are stored with their text, title and a link to the related section in <code>api/_data/index.json</code>, which is deployed together with the chat function. Because the index is small, it is searched in memory rather than in a separate vector database, which keeps the system simple and fast.</p>
+
+<h3 id="m4-4">5.4 Retrieval</h3>
+<p>When a visitor asks a question, <code>api/_lib/rag.js</code> embeds the question (together with the previous question, so follow-ups work), compares it with every chunk using cosine similarity, adds a small bonus for matching keywords, and keeps the best 3 to 6 chunks.</p>
+
+<h3 id="m4-5">5.5 Answer Generation</h3>
+<p><code>api/chat.js</code> sends the retrieved chunks and the question to a Gemini Flash model with strict instructions: answer in the first person, only from the given passages, and return JSON containing the answer and the passages used. If the main model is busy, the server tries two backup models and retries once within a time limit.</p>
+<h6 class="tab">Table 5: Summary of the RAG pipeline</h6>
 <table>
-  <tr><th style="width:16%">Step</th><th style="width:28%">Where</th><th>What happens</th></tr>
-  <tr><td>Collect</td><td><code>knowledge/*.md</code>, <code>content.js</code></td><td>CV facts (about, education, experience, skills, achievements, contact) and every project’s details</td></tr>
-  <tr><td>Chunk</td><td><code>scripts/build-index.mjs</code></td><td>Paragraphs grouped into chunks of up to 700 characters, each with its document title (40 chunks)</td></tr>
-  <tr><td>Embed</td><td><code>api/_lib/gemini.js</code></td><td>Each chunk turned into a 768-number vector with gemini-embedding-001</td></tr>
-  <tr><td>Store</td><td><code>api/_data/index.json</code></td><td>Text, title, section link and vector of each chunk, deployed with the function</td></tr>
-  <tr><td>Retrieve</td><td><code>api/_lib/rag.js</code></td><td>The question is embedded and compared with every chunk by cosine similarity, with a small bonus for matching keywords; the best 3 to 6 chunks are kept</td></tr>
-  <tr><td>Generate</td><td><code>api/chat.js</code></td><td>A Gemini model answers in the first person from those chunks only and returns JSON with the answer and the chunks it used</td></tr>
-  <tr><td>Cite</td><td><code>ChatPanel.jsx</code></td><td>The sources are shown under the answer; clicking one opens that section or project</td></tr>
+  <tr><th style="width:16%">Stage</th><th style="width:28%">File</th><th>What happens</th></tr>
+  <tr><td>Collect</td><td><code>knowledge/*.md</code></td><td>CV facts and project details</td></tr>
+  <tr><td>Chunk</td><td><code>scripts/build-index.mjs</code></td><td>40 chunks of up to 700 characters</td></tr>
+  <tr><td>Embed</td><td><code>api/_lib/gemini.js</code></td><td>768-dimension vectors with gemini-embedding-001</td></tr>
+  <tr><td>Store</td><td><code>api/_data/index.json</code></td><td>Vector index deployed with the function</td></tr>
+  <tr><td>Retrieve</td><td><code>api/_lib/rag.js</code></td><td>Cosine similarity, top 3–6 chunks</td></tr>
+  <tr><td>Generate</td><td><code>api/chat.js</code></td><td>Gemini answers from the chunks only</td></tr>
 </table>
-<p>The index is small (40 chunks), so it is stored as a JSON file and searched in memory instead of using a vector database. This keeps the function simple and fast.</p>
 
-<h3 id="s7-2">7.2 Rules and Safety</h3>
-<p>The instructions given to the model are strict. If the answer is not in the passages, it must reply that the information is not in its records. It must never give the phone number (it offers email and LinkedIn instead), must treat the passages and the visitor’s question as data rather than as instructions, and replies in English unless the visitor writes in Urdu. Each visitor is limited to 30 questions per 10 minutes.</p>
+<h3 id="m4-6">5.6 Avoiding Invented Information</h3>
+<p>If the answer is not in the passages, the chatbot replies that it is not in its records instead of guessing. It never shares my phone number (it offers email and LinkedIn instead), treats the passages and the visitor’s text as data rather than instructions, and limits each visitor to 30 questions per 10 minutes.</p>
 
-<h3 id="s7-3">7.3 Interface</h3>
-<p>The chat panel can be opened from any section. It offers suggested questions, remembers the previous question for follow-ups, accepts spoken questions through the Web Speech API and can read answers aloud. While the chat is open, the 3D camera moves so that the panel does not cover the avatar.</p>
+<h3 id="m4-7">5.7 Chat Interface</h3>
+<p>The chat panel can be opened from any section. It offers suggested questions, shows the sources of each answer as links to the matching section or project, accepts spoken questions, can read answers aloud, and replies in Urdu when asked in Urdu.</p>
 <figure class="w80"><img src="img/11-chatbot.jpg" alt=""></figure>
-<h6 id="f10">Figure 10: The chatbot on the deployed site answering a question, with its sources</h6>
+<h6>Figure 11: The chatbot on the live site answering a question, with its sources</h6>
+</section>
 
-<h3 id="s7-4">7.4 Handling Service Failures</h3>
-<p>During testing of the deployed site, the Gemini service sometimes answered with “model is experiencing high demand”. To handle this, the server now tries three models in turn (gemini-3.5-flash-lite, gemini-flash-lite-latest and gemini-3.8-flash), pauses briefly and tries once more, all within a fixed time limit. The embedding request is also retried once. After this change the deployed chatbot answered four test questions out of four, although answers can take 10 to 20 seconds when the service is busy.</p>
+<!-- ========== MODULE 5 ========== -->
+<section class="newpage">
+<h2 id="m5">6. Module 5: Email and Contact System</h2>
 
-<!-- ========== 8 ========== -->
-<h2 id="s8">8. Additional Feature: ZJ Arcade</h2>
-<p>As an extra feature, the arcade machines in the Project Gallery open a set of mini-games. They give recruiters a short, playful way to learn about the author, and they show game-development skills directly in the portfolio.</p>
-<h3 id="s8-1">8.1 Coins and the Insert-Coin Scene</h3>
-<p>Each visitor starts with one coin and earns another for every room visited for the first time. When the arcade is opened, the avatar walks to the machine, takes a gold coin out of her pocket (the InsertCoin clip in Table 5), and flicks it into the slot. The coin is attached to the bone of her right hand while she holds it and then follows an arc into the slot. The machine’s lights flash, the screen turns on and the camera moves into the screen, where the game menu appears. The scene can always be skipped, and coins never block the games.</p>
-<div class="row"><img src="img/13-arcade-insert.jpg" alt=""><img src="img/14-arcade-menu.jpg" alt=""></div>
-<h6 id="f11">Figure 11: The avatar walking to the arcade machine (left) and the game menu (right)</h6>
+<h3 id="m5-1">6.1 Contact Form</h3>
+<p>The form on the Contact Desk has the four required fields: name, email address, subject and message (<code>src/components/ContactForm.jsx</code>). Messages are handled by the serverless function <code>api/contact.js</code>.</p>
 
-<h3 id="s8-2">8.2 Fit Check</h3>
-<p>Fit Check asks “Is Zubia right for your studio?”. A recruiter turns over cards for requirements such as Unity, VR/XR, enemy AI or teamwork, or types their own. Each card shows a score out of 10, the evidence from the CV and an honest gap, and a meter shows the average. The scores come from Gemini, which receives the whole knowledge base and a strict scoring guide that does not allow invented evidence. The ten standard cards are scored in advance (<code>npm run fit</code>) so that they open instantly.</p>
-<figure class="w80"><img src="img/15-fit-check.jpg" alt=""></figure>
-<h6 id="f12">Figure 12: Fit Check with three requirement cards turned over</h6>
+<h3 id="m5-2">6.2 Validation on the Frontend and Backend</h3>
+<p>The browser shows hints as soon as a field is left invalid. Because browser checks can be bypassed, the server checks every field again: name 2–80 characters, a valid email address, subject 3–120 characters and message 10–3000 characters. Errors from the server appear under the field they belong to.</p>
 
-<h3 id="s8-3">8.3 Quiz and Crunch Time</h3>
-<p>The quiz “How well do you know Zubia?” asks five questions drawn from a pool of seventeen, with a 15-second timer and bonus points for answer streaks. A visitor with three or more correct answers unlocks a player card with game-style ratings.</p>
-<p>Crunch Time is a small tower-defence game. Bugs move along a path from the “Bug Tracker” to “Release Day” over ten waves, ending with a boss. The towers do not fire automatically: the player taps a bug and the nearest tower fires its shot (a fireball, a laser, a frost blast that slows bugs, or a cannon shell with splash damage). The player starts with one fireball and earns more at score milestones, and the shots become stronger every wave. The rules are written in plain JavaScript and were balanced with a simulation script that plays the game with different tapping speeds and tower choices. Both the quiz and Crunch Time work without an internet connection.</p>
-<div class="row"><img src="img/16-quiz.jpg" alt=""><img src="img/18-crunch-play.jpg" alt=""></div>
-<h6 id="f13">Figure 13: A quiz question (left) and Crunch Time during wave 4 (right)</h6>
+<h3 id="m5-3">6.3 Sending the Email</h3>
+<p>Valid messages are sent through the Resend email API to my designated address. The visitor’s address is set as <code>reply_to</code>, so I can answer with the normal Reply button. The email has a clear subject (<code>[Portfolio] …</code>), a formatted HTML body and a plain-text version.</p>
 
-<h3 id="s8-4">8.4 Free Roam</h3>
-<p>In Free Roam the visitor controls the avatar directly, with the keyboard, an on-screen joystick on phones, or by tapping the floor. Walls and furniture block movement. Eight glowing spots start a conversation in which the visitor can ask the chatbot about that object, and a counter tracks how many spots have been found.</p>
-<figure class="w70"><img src="img/19-free-roam.jpg" alt=""></figure>
-<h6 id="f14">Figure 14: Free Roam, with the avatar near the poster wall</h6>
-
-<!-- ========== 9 ========== -->
-<h2 id="s9">9. Module 5: Contact Form and Email</h2>
-<h3 id="s9-1">9.1 Form and Validation</h3>
-<p>The contact form has four fields: name, email, subject and message. They are checked twice. The browser gives immediate hints, and the server checks every field again because the browser checks can be bypassed. The limits are 2 to 80 characters for the name, a valid email address, 3 to 120 characters for the subject and 10 to 3000 for the message. Errors from the server are shown under the field they belong to. Line breaks and control characters are removed from the one-line fields, which prevents email header injection, and all text is escaped before it is placed in the HTML email.</p>
-
-<h3 id="s9-2">9.2 Spam Protection</h3>
-<p>A CAPTCHA would annoy real visitors, so only invisible checks are used.</p>
-<h6 class="tab" id="t8">Table 8: Spam protection in the contact form</h6>
-<table>
-  <tr><th style="width:28%">Check</th><th>How it works</th></tr>
-  <tr><td>Honeypot field</td><td>A hidden field that people do not see but bots usually fill in</td></tr>
-  <tr><td>Time check</td><td>A form sent less than 3 seconds after the page opened is treated as a bot</td></tr>
-  <tr><td>Rate limit</td><td>At most 3 messages per visitor per 10 minutes and 30 per hour in total</td></tr>
-  <tr><td>Content filter</td><td>At most 3 links and a list of common spam phrases</td></tr>
-  <tr><td>Duplicate check</td><td>The same message sent twice is rejected with a polite note</td></tr>
-  <tr><td>Silent rejection</td><td>Bots receive a normal success reply, so they cannot learn which check stopped them</td></tr>
-</table>
-
-<h3 id="s9-3">9.3 Email Delivery</h3>
-<p>Valid messages are sent with the Resend API [7]. The email goes to the author’s address with the visitor’s address as <code>reply_to</code>, so pressing Reply answers the visitor directly. While sending, the button shows a spinner. On success a confirmation card appears and, in the 3D view, the avatar celebrates and thanks the visitor. Every error message (offline, timeout, server problem) includes the email address as an alternative. Each delivered email is logged with Resend’s message ID, without the visitor’s details.</p>
+<h3 id="m5-4">6.4 Success and Error Messages</h3>
+<p>While sending, the button shows a spinner. On success a confirmation card appears with a tick and, in the 3D view, the avatar celebrates and thanks the visitor. Separate messages are shown for invalid fields, too many messages, a repeated message, no internet connection, a timeout and a server problem, and each error message gives my email address as an alternative.</p>
 <div class="row"><img src="img/23-contact-errors.jpg" alt=""><img src="img/24-contact-sent.jpg" alt=""></div>
-<h6 id="f15">Figure 15: Validation errors under the fields (left) and the confirmation after a real message was sent (right)</h6>
+<h6>Figure 12: Validation errors (left) and the success message after a real email was delivered (right)</h6>
 
-<!-- ========== 10 ========== -->
-<h2 id="s10">10. Module 6: Deployment</h2>
-<h3 id="s10-1">10.1 Hosting on Vercel</h3>
-<p>The site is hosted on Vercel [8]. Vite builds the front end into static files, and each file in the <code>api/</code> folder becomes a Node.js serverless function. The file <code>vercel.json</code> sets a time limit for each function (60 seconds for the chatbot and Fit Check, 15 seconds for the contact form), includes the vector index with the functions, and sets caching for the media files. A <code>.vercelignore</code> file keeps the secret <code>.env</code> file and large source material out of the upload.</p>
+<h3 id="m5-5">6.5 Protecting the API Key</h3>
+<p>The Resend key (<code>RESEND_API_KEY</code>) and the receiving address are read from environment variables. Locally they are in a <code>.env</code> file that is excluded from Git; on Vercel they are stored as encrypted environment variables. The key used can only send email.</p>
 
-<h3 id="s10-2">10.2 Secret Keys</h3>
-<p>The API keys are never written in the code. Locally they are in a <code>.env</code> file, which is excluded from Git. On Vercel they are stored as encrypted environment variables.</p>
-<h6 class="tab" id="t9">Table 9: Environment variables</h6>
+<h3 id="m5-6">6.6 Spam Protection and Secure Input Handling</h3>
+<h6 class="tab">Table 6: Spam protection and input handling</h6>
 <table>
-  <tr><th style="width:30%">Variable</th><th>Used by</th></tr>
-  <tr><td><code>GEMINI_API_KEY</code></td><td>Chatbot and Fit Check (embeddings and answers)</td></tr>
-  <tr><td><code>RESEND_API_KEY</code></td><td>Contact form (a key that can only send email)</td></tr>
-  <tr><td><code>CONTACT_TO</code> (optional)</td><td>Address that receives the contact messages</td></tr>
+  <tr><th style="width:28%">Measure</th><th>How it works</th></tr>
+  <tr><td>Honeypot field</td><td>A hidden field that people never see but bots fill in</td></tr>
+  <tr><td>Time check</td><td>A form sent within 3 seconds of opening the page is treated as a bot</td></tr>
+  <tr><td>Rate limit</td><td>3 messages per visitor per 10 minutes, 30 per hour overall</td></tr>
+  <tr><td>Content filter</td><td>At most 3 links and a list of common spam phrases</td></tr>
+  <tr><td>Duplicate check</td><td>The same message sent twice is refused politely</td></tr>
+  <tr><td>Input cleaning</td><td>Line breaks and control characters removed from one-line fields (prevents email header injection); all text HTML-escaped</td></tr>
+  <tr><td>Silent rejection</td><td>Bots get a normal success reply so they cannot tell what stopped them</td></tr>
 </table>
 
-<h3 id="s10-3">10.3 Deployment Steps</h3>
+<h3 id="m5-7">6.7 Evidence of Email Delivery</h3>
+<p>A test message sent through the form was delivered to my inbox. The server records every delivered email with the message ID returned by Resend, for example <code>contact: sent id=01a1e855-d1ec-7cf3-886c-a83b742bede0 subject="Module 5 delivery test"</code>, without logging the visitor’s details. The success screen in Figure 12 was captured after this delivery.</p>
+</section>
+
+<!-- ========== MODULE 6 ========== -->
+<section class="newpage">
+<h2 id="m6">7. Module 6: Deployment and Documentation</h2>
+
+<h3 id="m6-1">7.1 Deployment on Vercel</h3>
+<p>The portfolio is live at <b>https://zubia-junaid-portfolio.vercel.app</b>. Vite builds the front end into static files, and each file in <code>api/</code> becomes a Node.js serverless function. <code>vercel.json</code> sets a time limit for each function, bundles the chatbot’s vector index with the functions and sets caching for the media files. <code>.vercelignore</code> keeps the <code>.env</code> file and the large source material out of the upload.</p>
 <ol>
-  <li>The production build was checked locally with <code>npm run build</code>.</li>
-  <li>The project was linked to the existing Vercel project, so the new site replaced the old portfolio at the same address.</li>
-  <li>A preview deployment was made first, which does not change the live site.</li>
-  <li>The Gemini key was added in the Vercel dashboard, then the site was deployed to production with the Vercel command-line tool.</li>
-  <li>The live site and each function were tested (Section 11).</li>
+  <li>Checked the production build locally with <code>npm run build</code>.</li>
+  <li>Linked the project to Vercel and made a preview deployment, which does not affect the live site.</li>
+  <li>Added <code>GEMINI_API_KEY</code> and <code>RESEND_API_KEY</code> as encrypted environment variables in the Vercel dashboard.</li>
+  <li>Deployed to production with the Vercel command-line tool.</li>
+  <li>Tested the live site and each function (Section 9).</li>
 </ol>
 
-<h3 id="s10-4">10.4 GitHub Repository</h3>
-<p>The repository at https://github.com/zubiajunaid954-bot/zubia-studio-portfolio is public and contains the complete project, as required.</p>
-<h6 class="tab" id="t10">Table 10: Contents of the GitHub repository</h6>
-<table>
-  <tr><th style="width:30%">Requirement</th><th>Location in the repository</th></tr>
-  <tr><td>Complete source code</td><td><code>src/</code>, <code>api/</code>, <code>scripts/</code>, <code>index.html</code>, <code>package.json</code>, <code>vite.config.js</code>, <code>vercel.json</code></td></tr>
-  <tr><td>Avatar model</td><td><code>blender/</code> (.blend files, source model, Python scripts) and <code>public/models/avatar.glb</code></td></tr>
-  <tr><td>After Effects video</td><td><code>after-effects/</code> (.aep project and build script), <code>media-src/render/</code> (master and web renders)</td></tr>
-  <tr><td>Assets used</td><td><code>public/</code> (posters, trailers, images, CV), <code>media-src/</code> (footage, music, original trailers), <code>knowledge/</code></td></tr>
-  <tr><td>Report</td><td><code>docs/report/</code> (this report as PDF and its source) and <code>docs/screenshots/</code></td></tr>
-  <tr><td>Instructions</td><td><code>README.md</code> and <code>.env.example</code></td></tr>
-</table>
+<h3 id="m6-2">7.2 GitHub Repository</h3>
+<p>The complete project is in the public repository <b>https://github.com/zubiajunaid954-bot/zubia-studio-portfolio</b>. Appendix A lists where each required submission item can be found.</p>
 
-<h3 id="s10-5">10.5 Running the Project Locally</h3>
-<p>Node.js 20 or newer is needed. After copying <code>.env.example</code> to <code>.env</code> and adding the keys:</p>
+<h3 id="m6-3">7.3 README and Setup</h3>
+<p><code>README.md</code> explains every module, how to customise the content and how to run the project. In short, with Node.js 20 or newer:</p>
 <pre>npm install
-npm run dev        # opens the site at http://localhost:5180
-npm run build      # production build in dist/
-npm run index      # rebuilds the chatbot index after editing knowledge/</pre>
+copy .env.example .env      (then add GEMINI_API_KEY and RESEND_API_KEY)
+npm run dev                 (opens the site at http://localhost:5180)
+npm run build               (production build in dist/)
+npm run index               (rebuilds the chatbot index after editing knowledge/)</pre>
 
-<!-- ========== 11 ========== -->
-<h2 id="s11">11. Testing</h2>
-<h3 id="s11-1">11.1 Method</h3>
-<p>Most testing was done with Playwright scripts that control Microsoft Edge [9]. The scripts open the site, click and type like a visitor, and save screenshots, which were checked after every change. The same scripts were run at a desktop size (1440 × 900) and at a phone size (390 × 844 with touch input). The contact function was also tested directly with crafted requests. For Crunch Time, a separate script plays the game without a browser to check the difficulty. Finally, the deployed site was checked in the browser and each function was called on the live address.</p>
+<h3 id="m6-4">7.4 Screenshots</h3>
+<p>Screenshots of every module were captured from the live site with a Playwright script (<code>scripts/report-shots.mjs</code>) and are stored in <code>docs/screenshots/report/</code>. They are the figures used in this report.</p>
+</section>
 
-<h3 id="s11-2">11.2 Test Cases and Results</h3>
-<h6 class="tab" id="t11">Table 11: Main test cases and results</h6>
+<!-- ========== EXTRA ========== -->
+<section class="newpage">
+<h2 id="x">8. Additional Features for Extra Credit</h2>
+<h6 class="tab">Table 7: Extra-credit features</h6>
 <table>
-  <tr><th style="width:5%">No.</th><th style="width:33%">Test</th><th style="width:37%">Expected result</th><th>Result</th></tr>
+  <tr><th style="width:32%">Feature in the brief</th><th style="width:14%">Status</th><th>Implementation</th></tr>
+  <tr><td>Interactive 3D objects that respond to mouse movement</td><td>Done</td><td>The avatar turns her head and body towards the cursor and waves when clicked; the active room lifts and lights up</td></tr>
+  <tr><td>Dark and light themes</td><td>Done</td><td>Four themes: Amber Night, Violet, Lime &amp; Forest (dark) and Mono Light (light); the choice is remembered</td></tr>
+  <tr><td>Voice interaction with the chatbot</td><td>Done</td><td>Spoken questions and spoken answers using the Web Speech API</td></tr>
+  <tr><td>Multilingual chatbot support</td><td>Done</td><td>Replies in Urdu or Roman Urdu when asked in Urdu, otherwise English</td></tr>
+  <tr><td>Animated 3D avatar expressions or gestures</td><td>Done</td><td>Eight clips: wave, point, guide, present, celebrate, insert-coin, idle and walk</td></tr>
+  <tr><td>Project filtering and search</td><td>Done</td><td>Category filters and a search box in the Project Gallery</td></tr>
+  <tr><td>Website analytics</td><td>Not done</td><td>Left as future work</td></tr>
+  <tr><td>Accessibility enhancements</td><td>Done</td><td>Skip link, keyboard navigation, visible focus, ARIA labels, focus kept in dialogs, reduced-motion support, 2D view</td></tr>
+  <tr><td>Chatbot source citations</td><td>Done</td><td>Each answer lists its sources, which open the matching section or project</td></tr>
+</table>
+<div class="row"><img src="img/12-theme-2.jpg" alt=""><img src="img/12-theme-4.jpg" alt=""></div>
+<h6>Figure 13: Two of the four themes: Violet (left) and Mono Light (right)</h6>
+
+<h3 id="x-1">8.1 ZJ Arcade Mini-Games</h3>
+<p>As an extra of my own, the arcade machines in the Project Gallery open the ZJ Arcade. The avatar walks to the machine, takes a coin from her pocket and flicks it into the slot, then the camera dives into the screen and a game menu appears. There are four games:</p>
+<ul>
+  <li><b>Fit Check:</b> a recruiter turns over requirement cards (for example Unity, VR/XR or teamwork) and sees a score out of 10 with evidence from my CV, scored by Gemini using the same knowledge base as the chatbot.</li>
+  <li><b>How Well Do You Know Zubia?:</b> a timed five-question quiz about my CV that unlocks a player card.</li>
+  <li><b>Crunch Time:</b> a tower-defence game where the player taps bugs to fire at them before they reach “Release Day”.</li>
+  <li><b>Free Roam:</b> the visitor walks the avatar around the studio with the keyboard or an on-screen joystick and talks to the chatbot at eight glowing spots.</li>
+</ul>
+<div class="row"><img src="img/14-arcade-menu.jpg" alt=""><img src="img/15-fit-check.jpg" alt=""></div>
+<h6>Figure 14: The arcade menu (left) and Fit Check (right)</h6>
+<div class="row"><img src="img/18-crunch-play.jpg" alt=""><img src="img/19-free-roam.jpg" alt=""></div>
+<h6>Figure 15: Crunch Time (left) and Free Roam (right)</h6>
+</section>
+
+<!-- ========== TESTING ========== -->
+<section class="newpage">
+<h2 id="t">9. Testing</h2>
+<p>The site was tested with Playwright scripts that control Microsoft Edge like a real visitor (clicking, typing and scrolling) and save screenshots after each step. The same scripts were run at desktop size (1440 × 900) and phone size (390 × 844 with touch). The contact function was also tested with crafted requests, and the deployed site was tested on the live address and on a real phone.</p>
+<h6 class="tab">Table 8: Test cases and results</h6>
+<table>
+  <tr><th style="width:5%">No.</th><th style="width:32%">Test</th><th style="width:38%">Expected result</th><th>Result</th></tr>
   <tr><td>1</td><td>Open the live site</td><td>Intro plays, studio loads, no console errors</td><td>Passed</td></tr>
   <tr><td>2</td><td>Scroll and use the navigation bar</td><td>Camera and avatar move to each room</td><td>Passed</td></tr>
-  <tr><td>3</td><td>Switch between the four themes</td><td>Page and 3D colours change; choice is remembered</td><td>Passed</td></tr>
-  <tr><td>4</td><td>Phone size (390 × 844)</td><td>Content readable, joystick works in Free Roam</td><td>Passed</td></tr>
-  <tr><td>5</td><td>Ask the chatbot a question on the live site (4 times)</td><td>Correct answer with sources</td><td>Passed (4/4)</td></tr>
-  <tr><td>6</td><td>Ask about something not in the CV</td><td>“Not in my records” style reply</td><td>Passed</td></tr>
-  <tr><td>7</td><td>Submit the contact form empty</td><td>Error under each field</td><td>Passed</td></tr>
-  <tr><td>8</td><td>Submit a valid message</td><td>Email delivered, confirmation shown</td><td>Passed</td></tr>
-  <tr><td>9</td><td>Fill the honeypot or submit in under 3 s</td><td>Fake success, no email sent</td><td>Passed</td></tr>
-  <tr><td>10</td><td>Send 4 messages in 10 minutes</td><td>Fourth one refused (HTTP 429)</td><td>Passed</td></tr>
-  <tr><td>11</td><td>Send the same message twice</td><td>Second one refused (HTTP 409)</td><td>Passed</td></tr>
-  <tr><td>12</td><td>Open the arcade and play each game</td><td>Coin scene, menu and all four games work</td><td>Passed</td></tr>
-  <tr><td>13</td><td>Arcade while offline</td><td>Quiz and Crunch Time work; online games show a message</td><td>Passed</td></tr>
-  <tr><td>14</td><td>Crunch Time simulation</td><td>Active players win, slow tapping loses</td><td>Passed</td></tr>
+  <tr><td>3</td><td>Phone and tablet sizes</td><td>Layout adapts, all content readable</td><td>Passed</td></tr>
+  <tr><td>4</td><td>Switch themes</td><td>Page and 3D colours change and are remembered</td><td>Passed</td></tr>
+  <tr><td>5</td><td>Open a project and filter or search projects</td><td>Dialog with trailer opens; list filters correctly</td><td>Passed</td></tr>
+  <tr><td>6</td><td>Play the promotional video</td><td>Plays in the Showreel and on the 3D screen</td><td>Passed</td></tr>
+  <tr><td>7</td><td>Ask the chatbot about my projects (4 times on the live site)</td><td>Correct answers with sources</td><td>Passed (4/4)</td></tr>
+  <tr><td>8</td><td>Ask about something not in my documents</td><td>Says it is not in its records</td><td>Passed</td></tr>
+  <tr><td>9</td><td>Submit the contact form empty</td><td>An error under each field</td><td>Passed</td></tr>
+  <tr><td>10</td><td>Submit a valid message</td><td>Email delivered, success message shown</td><td>Passed</td></tr>
+  <tr><td>11</td><td>Fill the honeypot or submit in under 3 seconds</td><td>Fake success, no email sent</td><td>Passed</td></tr>
+  <tr><td>12</td><td>Send 4 messages in 10 minutes</td><td>Fourth one refused</td><td>Passed</td></tr>
+  <tr><td>13</td><td>Send the same message twice</td><td>Second one refused</td><td>Passed</td></tr>
 </table>
 
-<!-- ========== 12 ========== -->
-<h2 id="s12">12. Challenges and Solutions</h2>
-<h6 class="tab" id="t12">Table 12: Main problems and how they were solved</h6>
+<!-- ========== CHALLENGES ========== -->
+<h2 id="c">10. Challenges and Solutions</h2>
+<h6 class="tab">Table 9: Problems faced and how they were solved</h6>
 <table>
-  <tr><th style="width:38%">Problem</th><th>Solution</th></tr>
-  <tr><td>Blender could not compute skin weights for the AI-generated mesh</td><td>Measured the joints from slices of the mesh and wrote a script that computes the weights by body region</td></tr>
-  <tr><td>The AI model’s materials were fully metallic</td><td>The optimisation script replaces them with fabric-like materials</td></tr>
-  <tr><td>During the coin scene the avatar’s back faced the camera, hiding the coin</td><td>Turned the arcade machine and moved the standing point so the right hand stays visible</td></tr>
-  <tr><td>After Effects stopped responding while rendering</td><td>Built the project by script and rendered with the command-line renderer</td></tr>
-  <tr><td>Gemini timed out when scoring Fit Check cards</td><td>The standard cards are scored in advance and saved with the project</td></tr>
-  <tr><td>Gemini reported high demand on the live site</td><td>The server tries three models and retries once within a time limit</td></tr>
-  <tr><td>Crunch Time was too easy or too hard</td><td>Tuned the numbers with a simulation of players of different speeds</td></tr>
-  <tr><td>Phone users could not move in Free Roam</td><td>Added an on-screen joystick with wider touch detection</td></tr>
-  <tr><td>The browser preview ran slowly while hidden, which made tests unreliable</td><td>Ran the tests in a separate Edge window controlled by Playwright</td></tr>
+  <tr><th style="width:40%">Problem</th><th>Solution</th></tr>
+  <tr><td>Blender could not compute skin weights for the AI-generated mesh</td><td>Measured the joints from slices of the mesh and computed the weights in my own script</td></tr>
+  <tr><td>The exported materials were fully metallic</td><td>Replaced them with fabric-like materials in the optimisation script</td></tr>
+  <tr><td>After Effects stopped responding during rendering</td><td>Built the project with a script and rendered with the command-line renderer</td></tr>
+  <tr><td>The Gemini service was sometimes overloaded on the live site</td><td>The server tries three models and retries once within a time limit</td></tr>
+  <tr><td>Phone visitors could not move the avatar in Free Roam</td><td>Added an on-screen joystick for touch screens</td></tr>
+  <tr><td>Keeping API keys out of the code</td><td>Keys only in a git-ignored <code>.env</code> file locally and as Vercel environment variables online</td></tr>
 </table>
 
-<!-- ========== 13 ========== -->
-<h2 id="s13">13. Limitations</h2>
-<ul>
-  <li>Without a verified email domain, Resend can only deliver to the account owner’s address, so visitors receive the on-site confirmation but no confirmation email.</li>
-  <li>The chatbot and Fit Check depend on the free Gemini service, which can be slow or busy. The quiz and Crunch Time do not have this dependency.</li>
-  <li>The rate limits are kept in the memory of each serverless function, so they reset when the function restarts. A shared store such as a database would make them stricter.</li>
-  <li>The 3D view needs a reasonably modern device. Older devices use the 2D view instead.</li>
-</ul>
-
-<!-- ========== 14 ========== -->
-<h2 id="s14">14. Conclusion and Future Work</h2>
-<p>All six modules were completed and the portfolio is live. It presents the author’s real experience and projects inside a 3D game studio, guided by an avatar that was optimised, rigged and animated in Blender. A promotional video made in After Effects plays in the Screening Room, a chatbot answers questions only from the author’s own documents, and the contact form delivers email while blocking spam. The keys are kept out of the code, and the complete project is available in a public GitHub repository.</p>
-<p>The most useful lessons were about making the work repeatable and robust. Scripting Blender and After Effects meant that changes could be made and the output rebuilt quickly. Planning for phones, slow devices and failing external services from the start avoided many problems later.</p>
-<p>Possible future work includes verifying a custom email domain so that visitors also receive a confirmation email, keeping the rate limits in a shared store, adding more quiz questions and a leaderboard, and a WebXR mode so the studio can be visited with a VR headset.</p>
-
-<!-- ========== REFERENCES ========== -->
-<h2 id="refs">References</h2>
-<p>[1] Three.js documentation. https://threejs.org/docs/</p>
-<p>[2] React Three Fiber documentation, Poimandres. https://r3f.docs.pmnd.rs/</p>
-<p>[3] Blender 5.0 Reference Manual and Python API. https://docs.blender.org/</p>
-<p>[4] Adobe After Effects User Guide. https://helpx.adobe.com/after-effects/user-guide.html</p>
-<p>[5] P. Lewis et al., “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,” in Advances in Neural Information Processing Systems 33 (NeurIPS), 2020.</p>
-<p>[6] Google, Gemini API documentation. https://ai.google.dev/gemini-api/docs</p>
-<p>[7] Resend, API reference. https://resend.com/docs</p>
-<p>[8] Vercel, Functions and environment variables documentation. https://vercel.com/docs</p>
-<p>[9] Playwright documentation. https://playwright.dev/</p>
-<p>[10] W3C, Web Content Accessibility Guidelines (WCAG) 2.2. https://www.w3.org/TR/WCAG22/</p>
+<!-- ========== CONCLUSION ========== -->
+<h2 id="end">11. Conclusion</h2>
+<p>All six modules of the semester project were completed. The portfolio presents my profile, skills, projects, education, experience and achievements inside an interactive 3D studio, guided by an avatar that I prepared, rigged and animated in Blender. A 48-second After Effects video introduces me and my work, a RAG chatbot answers questions only from my own documents, and the contact form delivers email securely. The site is deployed on Vercel, works on desktop, tablet and mobile, and the complete project is on GitHub. Most of the extra-credit features were also added, together with the ZJ Arcade games.</p>
+<p>The project taught me how to connect many different tools into one working product, and how important it is to plan for phones, slow devices and external services that can fail. In future I would like to add website analytics, a confirmation email for visitors using a verified email domain, and a WebXR mode so the studio can be visited in a VR headset.</p>
+</section>
 
 <!-- ========== APPENDIX ========== -->
-<h2 id="appA">Appendix A: Requirements Checklist</h2>
-<h6 class="tab" id="t13">Table 13: Mapping of the project requirements to this report</h6>
+<section class="newpage">
+<h2 id="appA">Appendix A: Required Submission Materials</h2>
+<h6 class="tab">Table 10: Location of each required item</h6>
 <table>
-  <tr><th style="width:42%">Requirement</th><th style="width:16%">Status</th><th>Where</th></tr>
-  <tr><td>Interactive 3D website</td><td>Done</td><td>Section 4</td></tr>
-  <tr><td>Custom 3D avatar made in Blender</td><td>Done</td><td>Section 5</td></tr>
-  <tr><td>Promotional video made in After Effects</td><td>Done</td><td>Section 6</td></tr>
-  <tr><td>AI chatbot (RAG) about the owner</td><td>Done</td><td>Section 7</td></tr>
-  <tr><td>Working contact form with email</td><td>Done</td><td>Section 9</td></tr>
-  <tr><td>Public deployment</td><td>Done</td><td>Section 10.1–10.3</td></tr>
-  <tr><td>Public GitHub repository with source code, avatar model, video, assets and report</td><td>Done</td><td>Section 10.4</td></tr>
-  <tr><td>Report</td><td>Done</td><td>This document</td></tr>
+  <tr><th style="width:38%">Required item</th><th>Where to find it</th></tr>
+  <tr><td>Complete source code (frontend and backend)</td><td>GitHub: <code>src/</code> (frontend), <code>api/</code> (backend), <code>scripts/</code>, configuration files</td></tr>
+  <tr><td>Blender source file and exported avatar model</td><td><code>blender/avatar_animated.blend</code> and <code>public/models/avatar.glb</code></td></tr>
+  <tr><td>After Effects project file and final video</td><td><code>after-effects/Zubia_Junaid_Promo.aep</code> and <code>media-src/render/Zubia_Junaid_Promo_master.mp4</code></td></tr>
+  <tr><td>Working RAG-based chatbot</td><td>“Ask me anything” button on the live site; code in <code>api/chat.js</code> and <code>api/_lib/</code></td></tr>
+  <tr><td>Functional email/contact system</td><td>Contact Desk on the live site; code in <code>api/contact.js</code></td></tr>
+  <tr><td>Project report in PDF format</td><td><code>docs/report/Zubia_Junaid_Portfolio_Report.pdf</code></td></tr>
+  <tr><td>README with setup instructions</td><td><code>README.md</code></td></tr>
+  <tr><td>Screenshots of the major modules</td><td><code>docs/screenshots/report/</code> and the figures in this report</td></tr>
+  <tr><td>Live deployment URL</td><td>https://zubia-junaid-portfolio.vercel.app</td></tr>
+  <tr><td>GitHub repository link</td><td>https://github.com/zubiajunaid954-bot/zubia-studio-portfolio</td></tr>
+  <tr><td>All assets used</td><td><code>public/</code> (images, trailers, CV), <code>media-src/</code> (footage, music), <code>knowledge/</code> (chatbot documents)</td></tr>
 </table>
+
+<h3 id="refs">References</h3>
+<p>[1] Three.js documentation, https://threejs.org/docs/<br>
+[2] React Three Fiber documentation, https://r3f.docs.pmnd.rs/<br>
+[3] Blender 5.0 Manual and Python API, https://docs.blender.org/<br>
+[4] Adobe After Effects User Guide, https://helpx.adobe.com/after-effects/user-guide.html<br>
+[5] P. Lewis et al., “Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks,” NeurIPS, 2020.<br>
+[6] Google Gemini API documentation, https://ai.google.dev/gemini-api/docs<br>
+[7] Resend API documentation, https://resend.com/docs<br>
+[8] Vercel documentation, https://vercel.com/docs</p>
 </section>
 
 </body>

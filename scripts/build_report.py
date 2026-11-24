@@ -16,7 +16,7 @@ SRC = 'docs/report/report.html'
 TMP_HTML = 'docs/report/_build.html'
 TMP_PDF = 'docs/report/_build.pdf'
 OUT = 'docs/report/Zubia_Junaid_Portfolio_Report.pdf'
-HEADER = "Zubia's Studio - Interactive 3D Web Portfolio  |  CT-409 Web Programming"
+HEADER = "Zubia's Studio - Interactive 3D Web Portfolio  |  Web 3D Programming (CT-409)"
 
 src = open(SRC, encoding='utf8').read()
 items = []  # (kind, id, text)
@@ -70,13 +70,13 @@ for i, page in enumerate(doc):
     if i == 0:
         continue
     w, h = page.rect.width, page.rect.height
-    page.insert_textbox(pymupdf.Rect(60, 34, w - 60, 50), HEADER, fontname='Times-Italic', fontsize=8.5, color=(0.35, 0.35, 0.35), align=pymupdf.TEXT_ALIGN_CENTER)
-    page.draw_line(pymupdf.Point(68, 50), pymupdf.Point(w - 68, 50), color=(0.6, 0.6, 0.6), width=0.4)
+    page.insert_textbox(pymupdf.Rect(60, 34, w - 60, 50), HEADER, fontname='Times-Italic', fontsize=8.5, color=(0, 0, 0), align=pymupdf.TEXT_ALIGN_CENTER)
+    page.draw_line(pymupdf.Point(68, 50), pymupdf.Point(w - 68, 50), color=(0, 0, 0), width=0.4)
     page.insert_textbox(pymupdf.Rect(0, h - 40, w, h - 24), str(i + 1), fontname='Times-Roman', fontsize=10.5, align=pymupdf.TEXT_ALIGN_CENTER)
 
 # bookmarks: real headings only
 doc.set_toc([[1 if k == 'h2' else 2, t, pages[t]] for k, _, t in items if k in ('h2', 'h3') and pages[t] != '?'])
-doc.set_metadata({'title': 'Interactive 3D Web Portfolio - Project Report', 'author': 'Zubia Junaid', 'subject': 'CT-409 Web Programming'})
+doc.set_metadata({'title': 'Interactive 3D Web Portfolio - Project Report', 'author': 'Zubia Junaid', 'subject': 'Web 3D Programming (CT-409)'})
 doc.save(OUT, garbage=3, deflate=True)
 doc.close()
 os.remove(TMP_PDF)
