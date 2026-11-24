@@ -248,5 +248,5 @@ src/themes.js   colour themes
 
 ## Report and screenshots
 
-- `docs/report/Zubia_Junaid_Portfolio_Report.pdf`: the project report (17 pages), built from `docs/report/report.html` with `node scripts/report-pdf.mjs`.
+- `docs/report/Zubia_Junaid_Portfolio_Report.pdf`: the project report, built from `docs/report/report.html` with `python scripts/build_report.py` (needs PyMuPDF and Microsoft Edge).
 - `docs/screenshots/report/`: screenshots of the live site, captured with `node scripts/report-shots.mjs`.

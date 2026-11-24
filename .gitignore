@@ -6,11 +6,11 @@ dist
 *.blend1
 .npm-cache
 media-src/recordings
-# large renders that can be re-made (promo master, trailer music .wav)
-media-src/render
-media-src/trailer-music
 .vercel
 .vercel-global
 .playwright
 
 .scratch
+
+# local tool settings
+.claude
